@@ -1,0 +1,131 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+body{
+    background-color: white;
+}
+.app{
+    width: 70%;
+    max-width: 450px;
+    background-color: rgb(60, 0, 0);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    margin: 100px auto 0;
+    border-radius: 10px;
+    padding: 30px;
+}
+h1,h2{
+    color: white;
+}
+h2{
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+h1{
+    margin-bottom: 5px;
+}
+.btn{
+    padding: 10px;
+    display: block;
+    margin-bottom: 10px;
+    width: 98%;
+    cursor: pointer;
+    font-size: large;
+    border: none;
+    background-color: white;
+    border-radius: 6px;
+    transition: all 0.2s;
+}
+ .btn:hover{
+   background-color: #A9C7EA;
+   color: white;
+}
+button#next-btn{
+    padding: 10px;
+    width: 150px;
+    background-color: #f6ed6b;
+    border: none;
+    border-radius: 4px;
+    margin-left: 30%;
+    cursor: pointer;
+}
+button#next-btn:hover{
+    background-color: #f9e904;
+}
+.span{
+    font-size: x-large;
+    margin-left: 100px;
+}
+.para{
+    color: white;
+    margin-bottom: 10px;
+}
+.wrong{
+    padding: 10px;
+    display: block;
+    margin-bottom: 10px;
+    width: 98%;
+    cursor: pointer;
+    font-size: large;
+    border-color: red;
+    background-color: #ff9393;
+    border-radius: 6px;
+}
+.correct{
+    padding: 10px;
+    display: block;
+    margin-bottom: 10px;
+    width: 98%;
+    cursor: pointer;
+    font-size: large;
+    border-color: green;
+    background-color: #9aeabc;
+    border-radius: 6px;
+}
+img.tick{
+    width: 20px;
+    border-radius: 50%;
+    float: right;
+    display: none;
+}
+img.cross{
+    width: 20px;
+    border-radius: 50%;
+    float: right;
+    display: none;
+}
+.btn:disabled{
+    cursor: no-drop;
+} 
+h3{
+    margin-top: 10px;
+    color: white;
+    font-size: large;
+}
+.playagain{
+    padding: 10px;
+    width: 150px;
+    background-color: #f6ed6b;
+    border: none;
+    border-radius: 4px;
+    margin-left: 30%;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+/* div.questions .btn{
+    cursor: pointer;
+    display: block;
+    width: 20%;
+    margin-bottom: 5px;
+    padding: 10px;
+    background-color: greenyellow;
+}
+.wrong{
+    background-color: rgb(252, 104, 104);
+}
+.correct{
+    background-color: greenyellow;
+} */

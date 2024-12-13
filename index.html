@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+     <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app">
+        <h1 class="heading">JavaScript Quiz <span class="span"></span></h1><hr>
+        <div class="quiz one">
+            <h2 id="question">Question 1</h2>
+            <p class="para">Inside which HTML element do we put the JavaScript?</p>
+            <div class="answer-btn">
+                <button class="btn btn1" onclick="wrong('btn1')">&ltscripting&gt</button>
+                <button class="btn btn2" onclick="correct('btn2')">&ltjs&gt<img class="tick" src="./checkmark.png"></button>
+                <button class="btn btn3" onclick="wrong('btn3')">&ltscript&gt</button>
+                <button class="btn btn4" onclick="wrong('btn4')">&ltjavascript&gt</button>
+            </div>
+            <button id="next-btn" onclick="track()">Next</button> 
+            
+        </div>  
+    </div>
+    <script src="./quiz.js"></script>
+</body>
+</html> 
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="container">
+        <h1 class="heading">JavaScript Quiz</h1>
+        <h2 class="hdques">Question 1</h2>
+        <p class="para">Inside which HTML element do we put the JavaScript?</p>
+        <div class="questions">
+            <button class="btn btn1" onclick="check('btn1')">&ltscripting&gt</button>
+            <button class="btn btn2" onclick="check('btn2')">&ltjs&gt</button>
+            <button class="btn btn3" onclick="check('btn3')">&ltscript&gt</button>
+            <button class="btn btn4" onclick="check('btn4')">&ltjavascript&gt</button>
+            <button class="next">Next</button>
+        </div>
+    </div>
+
+    <script src="./quiz.js"></script>
+</body>
+</html> -->
