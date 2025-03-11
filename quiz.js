@@ -16,8 +16,6 @@ function countdown(){
 setTimeout(countdown,1000);
 }
 
-let tick = document.querySelector(".tick");
-
 
 let box1= document.querySelector(".btn1");
 let box2= document.querySelector(".btn2");
@@ -41,28 +39,28 @@ let questions=[
         {
                 title:"Question 2",
                 question:"How do you write 'Hello World' in an alert box?",
-                key1:'msg("Hello World"); <img  class="cross" src="./cross.png">',
+                key1:'msg("Hello World"); <img  class="cross1 cross" src="./cross.png">',
                 key2:'alert("Hello World"); <img class="tick" src="./checkmark.png">',
-                key3:'alertBox("Hello World"); <img class="cross" src="./cross.png">',
-                key4:'msgBox("Hello World"); <img  class="cross" src="./cross.png">',
+                key3:'alertBox("Hello World"); <img class="cross2 cross" src="./cross.png">',
+                key4:'msgBox("Hello World"); <img  class="cross3 cross" src="./cross.png">',
                 answer:'alert("Hello World");'
         },
         {
                 title:"Question 3",
                 question:"How to write an IF statement in JavaScript?",
-                key1:'if i = 5 <img class="cross" src="./cross.png">',
+                key1:'if i = 5 <img class="cross1 cross" src="./cross.png">',
                 key2:'if(i==5) <img class="tick" src="./checkmark.png">',
-                key3:'if i==5 then <img class="cross" src="./cross.png">',
-                key4:'if i=5 then <img  class="cross" src="./cross.png">',
+                key3:'if i==5 then <img class="cross2 cross" src="./cross.png">',
+                key4:'if i=5 then <img  class="cross3 cross" src="./cross.png">',
                 answer:'if(i==5)'
         },
         {
                 title:"Question 4",
                 question:"How does a FOR loop start?",
-                key1:'for i= 1 to 5 <img class="cross" src="./cross.png">',
+                key1:'for i= 1 to 5 <img class="cross1 cross" src="./cross.png">',
                 key2:'for(i=0;i<=5;i++) <img class="tick" src="./checkmark.png">',
-                key3:'for(i=0;i<=5) <img class="cross" src="./cross.png">',
-                key4:'for(i<=5;i++) <img class="cross" src="./cross.png">',
+                key3:'for(i=0;i<=5) <img class="cross2 cross" src="./cross.png">',
+                key4:'for(i<=5;i++) <img class="cross3 cross" src="./cross.png">',
                 answer:'for(i=0;i<=5;i++)'
         },
         {
@@ -76,22 +74,26 @@ let questions=[
 
 
 function wrong(val){
+        
     let  btn = document.querySelector(`.${val}`);
     btn.classList.add("wrong");
     if(val=='btn1'){
         box2.disabled=true;
         box3.disabled=true;
         box4.disabled=true;
+        document.querySelector(".cross1").style.display="block";
     }
     else if(val=='btn3'){
         box2.disabled=true;
         box1.disabled=true;
         box4.disabled=true;
+        document.querySelector(".cross2").style.display="block";
     }
     else if(val=='btn4'){
         box2.disabled=true;
         box3.disabled=true;
         box1.disabled=true;
+        document.querySelector(".cross3").style.display="block";
     }
     
 }
@@ -99,20 +101,24 @@ function correct(val){
     checkk++;
     let  btn = document.querySelector(`.${val}`);
     btn.classList.add("correct");
-    tick.style.display= "inline";
+    let tick=document.querySelector(".tick");
+    
     if(val=='btn2'){
         box1.disabled=true;
         box3.disabled=true;
         box4.disabled=true;
+        tick.style.display= "inline";
     }
 }
-function track(){    
+function track(){ 
+        let tick = document.querySelector(".tick");
+let cross = document.querySelector(".cross");   
     qus.innerText= questions[num].title;
     parag.innerText= questions[num].question;
-    box1.innerHTML= questions[num].key1;
-    box2.innerHTML= questions[num].key2;
-    box3.innerHTML= questions[num].key3;
-    box4.innerHTML= questions[num].key4;
+    box1.innerHTML= `${questions[num].key1}`;
+    box2.innerHTML= `${questions[num].key2}`;
+    box3.innerHTML= `${questions[num].key3}`;
+    box4.innerHTML= `${questions[num].key4}`;
     box2.disabled=false;
     box3.disabled=false;
     box1.disabled=false;
@@ -128,29 +134,45 @@ function track(){
     box4.classList.remove("wrong");
     if(num>=4){
 //        span.style.display="none";
-       document.querySelector(".quiz").innerHTML=`<h2>Result</h><h3>Score: ${checkk} out of 4</h3>
+       document.querySelector(".quiz").innerHTML=`<h2>Result</h><h3>Score: ${checkk} out of 4</h3><h3>Percentage: ${(checkk/4)*100}%</h3>
        <button class="playagain" onclick="playAgain()">Play Again</button>`; 
+      document.querySelector(".span").style.display="none";
     }
   num++;
   
   counter=10;
 }
+// function reset(){
+//         document.querySelector(".dia").innerHTML=`<dialog open><h4>Are You Sure You Want To Reset All</h4>
+//         <button class="yes">Yes</button><button class="no">Cancel</button></dialog>
+// `
+// }
+
+
+
 
 function playAgain(){
-        document.querySelector(".app").innerHTML=`<h1 class="heading">JavaScript Quiz <span class="span"></span></h1><hr>
-        <div class="quiz one">
-            <h2 id="question">Question 1</h2>
-            <p class="para">Inside which HTML element do we put the JavaScript?</p>
-            <div class="answer-btn">
-                <button class="btn btn1" onclick="wrong('btn1')">&ltscripting&gt</button>
-                <button class="btn btn2" onclick="correct('btn2')">&ltjs&gt<img class="tick" src="./checkmark.png"></button>
-                <button class="btn btn3" onclick="wrong('btn3')">&ltscript&gt</button>
-                <button class="btn btn4" onclick="wrong('btn4')">&ltjavascript&gt</button>
-            </div>
-            <button id="next-btn" onclick="track()">Next</button>`;
-            document.querySelector("#playagain").style.display="none";
-            checkk=0;
-            counter=10;
+        window.location.reload();
+        // alert("Play Again");
+//     let a=    document.createElement("a").href="#";
+//      a.innerHTML=   document.querySelector(".playagain");
+//         counter=10;
+//         document.querySelector(".span").style.display="inline";
+//         countdown();
+//         document.querySelector(".app").innerHTML=`<h1 class="heading">JavaScript Quiz <span class="span"></span></h1><hr>
+//         <div class="quiz one">
+//             <h2 id="question">Question 1</h2>
+//             <p class="para">Inside which HTML element do we put the JavaScript?</p>
+//             <div class="answer-btn">
+//                 <button class="btn btn1" onclick="wrong('btn1')">&ltscripting&gt</button>
+//                 <button class="btn btn2" onclick="correct('btn2')">&ltjs&gt<img class="tick" src="./checkmark.png"></button>
+//                 <button class="btn btn3" onclick="wrong('btn3')">&ltscript&gt</button>
+//                 <button class="btn btn4" onclick="wrong('btn4')">&ltjavascript&gt</button>
+//             </div>
+//             <button id="next-btn" onclick="track()">Next</button>`;
+//             document.querySelector("#playagain").style.display="none";
+//             checkk=0;
+            
 }
 
 // function selectAnswer(e){
