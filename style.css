@@ -5,14 +5,17 @@
     box-sizing: border-box;
 }
 body{
-    background-color: white;
+    background-image: linear-gradient(to right top, #051937, #004d7a, #008793, #00bf72, #a8eb12);
+    background-repeat: no-repeat;
+    height: 87.5vh;
 }
 .app{
     width: 70%;
     max-width: 450px;
-    background-color: rgb(60, 0, 0);
+    /* background-color: rgb(60, 0, 0); */
+    background-image: linear-gradient(to right top, #e703c0, #ff0d87, #ff674e, #ffa912, #f4e112);
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    margin: 100px auto 0;
+    margin: 69px auto 0;
     border-radius: 10px;
     padding: 30px;
 }
@@ -39,20 +42,22 @@ h1{
     transition: all 0.2s;
 }
  .btn:hover{
-   background-color: #A9C7EA;
+   background-color: pink;
    color: white;
 }
 button#next-btn{
     padding: 10px;
     width: 150px;
-    background-color: #f6ed6b;
+    background-color: #ffc150;
     border: none;
+    color: white;
+    font-size: medium;
     border-radius: 4px;
     margin-left: 30%;
     cursor: pointer;
 }
 button#next-btn:hover{
-    background-color: #f9e904;
+    background-color: #ffc250d4;
 }
 .span{
     font-size: x-large;
@@ -107,11 +112,43 @@ h3{
 .playagain{
     padding: 10px;
     width: 150px;
-    background-color: #f6ed6b;
+    background-color: #ffc150;
     border: none;
     border-radius: 4px;
     margin-left: 30%;
+    font-size: medium;
+    color: white;
     margin-top: 15px;
+    cursor: pointer;
+}
+dialog{
+    background-color: #9aeabc;
+    border: 2px solid red;
+    border-radius: 2px;
+    position: absolute;
+    top: 40%;
+    width: 500px;
+    padding: 20px;
+    font-size: large;
+    color: purple;
+    text-align: center;
+    left: 30%;
+}
+.yes{
+    background-color: greenyellow;
+    margin-left: 6%;
+    margin-right: 10px;
+    width: 120px;
+    height: 35px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+.no{
+    background-color: red;
+    font-size: large;
+    width: 120px;
+    height: 35px;
+    margin-top: 20px;
     cursor: pointer;
 }
 
