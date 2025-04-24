@@ -97,7 +97,7 @@ function wrong(val){
     }
     
 }
-function correct(val){
+function correct(val, target){
     checkk++;
     let  btn = document.querySelector(`.${val}`);
     btn.classList.add("correct");
@@ -109,6 +109,10 @@ function correct(val){
         box4.disabled=true;
         tick.style.display= "inline";
     }
+
+    // Preventing click spam
+    console.log(target);
+    target.disabled = true;
 }
 function track(){ 
         let tick = document.querySelector(".tick");
